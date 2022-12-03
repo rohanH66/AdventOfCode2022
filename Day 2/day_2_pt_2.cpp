@@ -84,6 +84,6 @@ int main() {
     }
 
     std::cout << "Your score is: " << your_score;
-    std::cout << "\n My score is: " << my_score;
+    std::cout << "\nMy score is: " << my_score;
 
 }

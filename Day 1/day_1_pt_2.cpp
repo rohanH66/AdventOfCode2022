@@ -36,5 +36,5 @@ int main() {
     int two = totals[v-2];
     int three = totals[v-3];
 
-    std::cout << "\n TOTAL OF TOP THREE IS " << one + two + three;
+    std::cout << "\nTOTAL OF TOP THREE IS " << one + two + three;
 }
