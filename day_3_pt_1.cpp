@@ -27,7 +27,7 @@ int main() {
                 
                 temp_val = second_half.find(first_half.substr(a, a+1));
                 if (alreadyadded.find(temp_val)){
-                    compartment.append(temp_val);
+                    //compartment.push_back(temp_val);
                     alreadyadded.append(temp_val);
                 }
                 
