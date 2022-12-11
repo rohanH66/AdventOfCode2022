@@ -4,70 +4,28 @@
 #include <string.h>
 #include <cctype>
 using namespace std;
+/* logic
+take input as a string (for one line at a time) - for loop the input
 
+split string into two parts
+
+
+sort through each string to see if any simmilatr occurances
+
+add all of them to a vector
+
+change number to letter
+
+print sum
+
+*/
 
 
 int main() {
-    string input;
-    int count = 0;;
-    string checkedline;
+
+    int sum = 1;
+    int input;
     cin >> input;
-    string pog;
-    int counter = 0;
-    int j=0;
-    bool check = false;
-    int failed;
-    int size;
 
-    for (int i = 0; i < input.size(); i++){
-        checkedline = input.substr(i, i+4);
-
-        
-        if (checkedline[j] == checkedline[j+1] || checkedline[j] == checkedline[j+2] || checkedline[j] == checkedline[j+3]){
-            
-            count++; 
-            counter = 1;   
-
-        }
-        
-        else if(checkedline[j+1] == checkedline[j+2] || checkedline[j+1] == checkedline[j+3]){
-            if(counter != 1){
-                count++;
-                counter = 2;
-            }
-        }
-        
-        else if(checkedline[j+2] == checkedline[j+3]){
-            if(counter != 1 || counter != 2){
-                count++;
-                counter = 3;
-            }
-        }
-
-        
-        if (counter == 0){
-            check = true;
-            break;
-
-        }
-
-
-        
-        
-        failed = 0; 
-
-        counter = 0;
-
-        if (check){
-            break;
-        }
-
-        checkedline = "";
-
-    }
-
-    cout << checkedline << endl;
-    std::cout << count;
-
-
+    cout << sum + input;
 }
