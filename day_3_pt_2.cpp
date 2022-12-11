@@ -22,135 +22,120 @@ print sum
 
 
 int main() {
-    string input;
-    string input_2;
-    string input_3;
+    string input_one;
+    string input_two;
+    string input_three;
     string compartment_one;
     string compartment_two;
-    string compartment_three;
-    string compartment_four;
-    string compartment_five;
-    string compartment_six;
     vector <char> temp_val;
     int index;
-    char letter_one;
-    char letter_two;
-    char letter_three;
+    char letter;
+    int temp_sum = 0;
+    int sum = 0;
     char letter_temp;
-    int temp_sum;
-    int sum;
-    bool check = true;
-    int new_index_one;
-    int new_index_two;
-    int new_index_three;
+    int temp_index;
+    bool check = false;
+    bool check_2 = false;
+    int temp_sum_two;
+    int length_one;
+    int length_two;
 
 
-    for (int i = 0; i < 300; i++){
-        cin >> input;
-        cin >> input_2;
-        cin >> input_3;
+    for (int i = 0; i < 100; i++){
+        cin >> input_one;
+        cin >> input_two;
+        cin >> input_three;
+
+        cout << input_one << endl;
+        cout << input_two << endl;
+        cout << input_three << endl;
+
+        
 
 
-        compartment_one = input.substr(0, input.size()/2);
-        compartment_two = input.substr(input.size()/2);
 
-        compartment_three = input_2.substr(0, input.size()/2);
-        compartment_four = input_2.substr(input.size()/2);
+        for (int j = 0; j < input_one.length(); j++){
+            if (input_one.find(input_two[j]) != string::npos){
 
-        compartment_five = input_3.substr(0, input.size()/2);
-        compartment_six = input_3.substr(input.size()/2);
+                index = input_one.find(input_two[j]);
+                letter = input_one[index];
+                cout << letter << "one" << endl;
+                
+                //cout << endl << letter << j << "letter one";
 
-        cout << compartment_one << endl;
-        cout << compartment_two << endl;
-        while(check){
-            for (int j = 0; j < compartment_one.length(); j++){
-                if (compartment_one.find(compartment_two[j + new_index_one]) != string::npos){
-                    cout << "char  found" << endl;
-                    index = compartment_one.find(compartment_two[j + new_index_one]);
-                    new_index_one = compartment_one.find(compartment_two[j + new_index_one]);
-                    letter_one = compartment_one[index];   
-                    break;      
+                for (int x = 0; x < input_two.length(); x++){
+                    if(input_three.find(input_two[x]) != string::npos){
+                        temp_index = input_three.find(input_two[x]);
+                        letter_temp = input_three[temp_index];
+
+                        cout << letter_temp << "three" << endl;
+                        //cout << endl << letter_temp << x << "letter temp";
+                       
+                        if (letter == letter_temp){
+                            cout << letter_temp << "two" << endl;
+                            if (islower(letter)){
+                                temp_sum = int(letter) - 96;
+                                //cout << "we got here (1)";
+                                sum += temp_sum;
+                                //cout << endl << letter;
+                                
+                            }
+
+                            else{
+                                temp_sum_two = int(letter);
+                                //cout << endl << letter;
+                                //cout << temp_sum_two << endl;
+                                temp_sum = temp_sum_two - 38;
+                                //cout << temp_sum;
+                                sum += temp_sum;
+                                //cout << endl <<  "we got here (9)";
+                            }
+                            check = true;
+                            break;
+                        }
+                        
+                        else if (x == input_two.length()){
+                            break;
+                        }
+                            
+                    }
 
                     
 
                 }
-                else{
 
+                if (check){
+                    //cout << "we got here (3)";
+                    check_2 = true;
+                    break;
                 }
 
+                
             }
-
-            for (int j = 0; j < compartment_three.length(); j++){
-                if (compartment_three.find(compartment_four[j + new_index_two]) != string::npos){
-                    cout << "char  found" << endl;
-                    index = compartment_three.find(compartment_four[j + new_index_two]);
-                    new_index_two = compartment_three.find(compartment_four[j + new_index_two]);
-                    letter_two = compartment_three[index];   
-                    break;      
-
-                    
-
-                }
-                else{
-                    
-                }
-
-            }
-
-            for (int j = 0; j < compartment_five.length(); j++){
-                if (compartment_five.find(compartment_six[j + new_index_three]) != string::npos){
-                    cout << "char  found" << endl;
-                    index = compartment_five.find(compartment_six[j + new_index_three]);
-                    new_index_three = compartment_three.find(compartment_four[j + new_index_three]);
-                    letter_three = compartment_five[index];   
-                    break;      
-
-                    
-
-                }
-                else{
-                    
-                }
-
-            }
-
-            if (letter_one == letter_two == letter_three){
-                if (islower(letter_one)){
-                    temp_sum = int(letter_one) - 96;
-
-                    sum += temp_sum;
-                  
-                }
-
-                else{
-                        temp_sum = int(letter_one) - 38;
-                        sum += temp_sum;
-                   
-                }
-                check = false;
-                new_index_one = 0;
-                new_index_two = 0;
-                new_index_three = 0;
-
-            }
+                
+                
 
             else{
-                letter_one = letter_temp;
+                
             }
-
-
+            
+            check = false; 
+  
 
 
         
-
-        
-
         }
 
-        cout << endl << sum;
+        
+
+        
+
         
 
     }
+
+    cout << endl << sum;
+        
 
 
 
