@@ -50,29 +50,43 @@ int main() {
         cout << input_two << endl;
         cout << input_three << endl;
 
+        if (input_one.length() > input_two.length()){
+            length_one = input_one.length();
+        }
+        else{
+            length_one = input_two.length();
+        }
+
+        if (input_three.length() > input_two.length()){
+            length_two = input_three.length();
+        }
+        else{
+            length_two = input_two.length();
+        }
+
         
 
 
 
-        for (int j = 0; j < input_one.length(); j++){
+        for (int j = 0; j < length_one; j++){
             if (input_one.find(input_two[j]) != string::npos){
 
                 index = input_one.find(input_two[j]);
                 letter = input_one[index];
-                cout << letter << "one" << endl;
-                
+                cout << letter << " one" << endl;
+                 
                 //cout << endl << letter << j << "letter one";
 
-                for (int x = 0; x < input_two.length(); x++){
+                for (int x = 0; x < length_two; x++){
                     if(input_three.find(input_two[x]) != string::npos){
                         temp_index = input_three.find(input_two[x]);
                         letter_temp = input_three[temp_index];
 
-                        cout << letter_temp << "three" << endl;
+                        cout << letter_temp << " three" << endl;
                         //cout << endl << letter_temp << x << "letter temp";
                        
                         if (letter == letter_temp){
-                            cout << letter_temp << "two" << endl;
+                            cout << letter_temp << " two" << endl;
                             if (islower(letter)){
                                 temp_sum = int(letter) - 96;
                                 //cout << "we got here (1)";
@@ -94,10 +108,12 @@ int main() {
                             break;
                         }
                         
-                        else if (x == input_two.length()){
-                            break;
-                        }
+                        
                             
+                    }
+
+                    else if (x == input_two.length()){
+                        break;
                     }
 
                     
