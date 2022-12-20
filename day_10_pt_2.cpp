@@ -35,10 +35,10 @@ int main() {
             }
 
             if (abs((cycles-1) - modifier) < 2){
-                gridmap[cycles-1].append("#");
+                gridmap.insert(cycles-1, "#"); 
             }
             else{
-               gridmap[cycles-1] = "."; 
+               gridmap.insert(cycles-1, "."); 
             }
 
            
@@ -60,10 +60,10 @@ int main() {
             }
 
             if (abs((cycles-1) - modifier) < 2){
-                gridmap[cycles-1] = "#";
+                gridmap.insert(cycles-1, "#");
             }
             else{
-               gridmap[cycles-1] = "."; 
+               gridmap.insert(cycles-1, ".");
             }
            
             cycles += 1;
@@ -73,26 +73,26 @@ int main() {
             }
 
             if (abs((cycles-1) - modifier) < 2){
-                gridmap[cycles-1] = "#";
+                gridmap.insert(cycles-1, "#");
             }
             else{
-               gridmap[cycles-1] = "."; 
+               gridmap.insert(cycles-1, "."); 
             } 
            
             cpu_register += integer;
 
             
         }
-
-        for(int i = 0; i < gridmap.length(); i ++) {
-            if(i % 40 == 0 && i != 0) {
-                cout << i;
-            }
-            cout << gridmap[i];
-        }
-
-
     }
+        
+    for(int i = 0; i < gridmap.length(); i ++) {
+        if(i % 40 == 0 && i != 0) {
+            cout << i;
+        }
+        cout << gridmap[i];
+    }
+
+
 
 
 

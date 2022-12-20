@@ -33,7 +33,7 @@ int main() {
             new_calories = new_calories + tempval;
         }
     }
-    std::cout << "\nmax calories are:" << max_calories;
+    std::cout << "\nmax calories are: " << max_calories;
 
     return(0);
 }

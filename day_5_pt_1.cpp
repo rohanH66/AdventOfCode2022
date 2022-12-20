@@ -9,18 +9,12 @@ using namespace std;
 
 int main() {
    
-    string temp_letter;
-    string temp_input;
-    string blank;
-    string move;
-    int quantity;
-    int stack_one;
-    int stack_two;
-    string to;
-    string from;
-
-    string numbers; //not important input;
     
+    
+    
+
+     //not important input;
+    //define vectors for stacks (append later)
     vector<char> one;
     vector<char> two;
     vector<char> three;
@@ -31,6 +25,17 @@ int main() {
     vector<char> eight;
     vector<char> nine;
     
+        
+    string to;
+    string from;
+    string numbers;
+    string temp_letter;
+    string temp_input;
+    string blank;
+    string move;
+    int quantity;
+    int stack_one;
+    int stack_two;
 
 
 
@@ -43,10 +48,10 @@ int main() {
     
 
 
-    for(int j =0; j < 8; j++){
+    for(int j = 0; j < 8; j++){
         getline(cin, temp_input);
 
-        for(int i =0; i < temp_input.size(); i++){
+        for(int i = 0; i < temp_input.size(); i++){
             temp_letter = temp_input[i];
             if (temp_letter == " "){
                 
@@ -100,13 +105,16 @@ int main() {
         
     }
 
-    getline(cin, numbers);
+    
 
+    getline(cin, numbers);
     getline(cin, blank);
+
+    
 
     for (int x = 0; x < 501; x++ ){
         cin >> move >> quantity >> from >> stack_one >> to >> stack_two; 
-        
+        cout << quantity << endl << stack_one << endl << stack_two;
         
         for (int y = 0; y < quantity; y++){
             if (stack_one == 1){
@@ -121,6 +129,7 @@ int main() {
                 else if(stack_two == 4){
                     four.insert(four.begin(), one[0]);
                     one.erase(one.begin());
+                    
                 }
                 else if(stack_two == 5){
                     five.insert(five.begin(), one[0]);
@@ -188,12 +197,12 @@ int main() {
             }
 
             else if (stack_one == 3){
-                if(stack_two == 2){
-                    two.insert(two.begin(), three[0]);
+                if(stack_two == 1){
+                    one.insert(one.begin(), three[0]);
                     three.erase(three.begin());
                 }
-                else if(stack_two == 1){
-                    one.insert(one.begin(), three[0]);
+                else if(stack_two == 2){
+                    two.insert(two.begin(), three[0]);
                     three.erase(three.begin());
                 }
                 else if(stack_two == 4){
@@ -227,12 +236,13 @@ int main() {
             }
 
             else if (stack_one == 4){
-                if(stack_two == 2){
-                    two.insert(two.begin(), four[0]);
-                    four.erase(four.begin());
-                }
-                else if(stack_two == 1){
+                if(stack_two == 1){
                     one.insert(one.begin(), four[0]);
+                    four.erase(four.begin());
+                    
+                }
+                else if(stack_two == 2){
+                    two.insert(two.begin(), four[0]);
                     four.erase(four.begin());
                 }
                 else if(stack_two == 3){
@@ -266,20 +276,21 @@ int main() {
             }
 
             else if (stack_one == 5){
-                if(stack_two == 2){
-                    two.insert(two.begin(), five[0]);
-                    five.erase(five.begin());
-                }
-                else if(stack_two == 1){
+                if(stack_two == 1){
                     one.insert(one.begin(), five[0]);
                     five.erase(five.begin());
+                    
                 }
-                else if(stack_two == 4){
-                    four.insert(four.begin(), five[0]);
+                else if(stack_two == 2){
+                    two.insert(two.begin(), five[0]);
                     five.erase(five.begin());
                 }
                 else if(stack_two == 3){
                     three.insert(three.begin(), five[0]);
+                    five.erase(five.begin());
+                }
+                else if(stack_two == 4){
+                    four.insert(four.begin(), five[0]);
                     five.erase(five.begin());
                 }
                 else if(stack_two == 6){
@@ -305,12 +316,16 @@ int main() {
             }
 
             else if (stack_one == 6){
-                if(stack_two == 2){
+                if(stack_two == 1){
+                    one.insert(one.begin(), six[0]);
+                    six.erase(six.begin());
+                }
+                else if(stack_two == 2){
                     two.insert(two.begin(), six[0]);
                     six.erase(six.begin());
                 }
-                else if(stack_two == 1){
-                    one.insert(one.begin(), six[0]);
+                else if(stack_two == 3){
+                    three.insert(three.begin(), six[0]);
                     six.erase(six.begin());
                 }
                 else if(stack_two == 4){
@@ -319,10 +334,6 @@ int main() {
                 }
                 else if(stack_two == 5){
                     five.insert(five.begin(), six[0]);
-                    six.erase(six.begin());
-                }
-                else if(stack_two == 3){
-                    three.insert(three.begin(), six[0]);
                     six.erase(six.begin());
                 }
                 else if(stack_two == 7){
@@ -344,12 +355,16 @@ int main() {
             }
 
             else if (stack_one == 7){
-                if(stack_two == 2){
+                if(stack_two == 1){
+                    one.insert(one.begin(), seven[0]);
+                    seven.erase(seven.begin());
+                }
+                else if(stack_two == 2){
                     two.insert(two.begin(), seven[y]);
                     seven.erase(seven.begin());
                 }
-                else if(stack_two == 1){
-                    one.insert(one.begin(), seven[0]);
+                else if(stack_two == 3){
+                    three.insert(three.begin(), seven[0]);
                     seven.erase(seven.begin());
                 }
                 else if(stack_two == 4){
@@ -362,10 +377,6 @@ int main() {
                 }
                 else if(stack_two == 6){
                     six.insert(six.begin(), seven[0]);
-                    seven.erase(seven.begin());
-                }
-                else if(stack_two == 3){
-                    three.insert(three.begin(), seven[0]);
                     seven.erase(seven.begin());
                 }
                 else if(stack_two == 8){
@@ -383,12 +394,17 @@ int main() {
             }
 
             else if (stack_one == 8){
-                if(stack_two == 2){
+                if(stack_two == 1){
+                    one.insert(one.begin(), eight[0]);
+                    eight.erase(eight.begin());
+                    
+                }
+                else if(stack_two == 2){
                     two.insert(two.begin(), eight[0]);
                     eight.erase(eight.begin());
                 }
-                else if(stack_two == 1){
-                    one.insert(one.begin(), eight[0]);
+                else if(stack_two == 3){
+                    three.insert(three.begin(), eight[0]);
                     eight.erase(eight.begin());
                 }
                 else if(stack_two == 4){
@@ -407,10 +423,6 @@ int main() {
                     seven.insert(seven.begin(), eight[0]);
                     eight.erase(eight.begin());
                 }
-                else if(stack_two == 3){
-                    three.insert(three.begin(), eight[0]);
-                    eight.erase(eight.begin());
-                }
                 else if(stack_two == 9){
                     nine.insert(nine.begin(), eight[0]);
                     eight.erase(eight.begin());
@@ -421,13 +433,17 @@ int main() {
                
             }
 
-            else if (stack_one == 9){
-                if(stack_two == 2){
+            else {
+                if(stack_two == 1){
+                    one.insert(one.begin(), nine[0]);
+                    nine.erase(nine.begin());
+                }
+                else if(stack_two == 2){
                     two.insert(two.begin(), nine[0]);
                     nine.erase(nine.begin());
                 }
-                else if(stack_two == 1){
-                    one.insert(one.begin(), nine[0]);
+                else if(stack_two == 3){
+                    three.insert(three.begin(), nine[0]);
                     nine.erase(nine.begin());
                 }
                 else if(stack_two == 4){
@@ -450,30 +466,38 @@ int main() {
                     eight.insert(eight.begin(), nine[0]);
                     nine.erase(nine.begin());
                 }
-                else if(stack_two == 3){
-                    three.insert(three.begin(), nine[0]);
-                    nine.erase(nine.begin());
-                }
+                
                 else{
 
                 }
                
             }
                
-            else{
-
-            }
+            
             
             
         }
 
         
 
-
     }
 
+        
 
-    cout << one[0];
+        
+
+
+    string tempchar;
+
+    for (int y = 0; y < four.size(); y++){
+        cout << four[y] << endl;
+         
+    }
+
+    
+
+   
+    cout << endl << one[0];
     cout << two[0];
     cout << three[0];
     cout << four[0];
@@ -482,6 +506,7 @@ int main() {
     cout << seven[0];
     cout << eight[0];
     cout << nine[0];
+
 
 
 
