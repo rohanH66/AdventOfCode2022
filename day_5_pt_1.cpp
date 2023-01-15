@@ -108,7 +108,6 @@ int main() {
     
 
     getline(cin, numbers);
-    getline(cin, blank);
 
     
 
